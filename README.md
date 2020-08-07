@@ -27,11 +27,11 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
-
+The stuff on the document 
 2. What is an event?
-
+Something that happens to / on the document 
 3. What is an event listener?
-
+something that is enstantiated when something happens to the Document. like a Click
 4. Why would we convert a NodeList into an Array?
 
 5. What is a component?
