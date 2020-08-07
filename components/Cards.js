@@ -55,78 +55,15 @@ function iMakeCards (articleData){
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then(theData =>{
-    // let topic = theData.data
-    // console.log(topic)
-    for (let i = 0; i<theData.data.articles.length; ){
-    let test = theData.data.articles[i]
-    console.log(test)
-    test[i].forEach(article =>{
-        const newArticle = iMakeCards(article)
-    appendPoint.appendChild(newArticle)
+    let allArticles = theData.data.articles
+    Object.values(allArticles).forEach(article =>{
+        article.forEach(eachArticle =>{
+            const newArticle = iMakeCards(eachArticle)
+        appendPoint.appendChild(newArticle)
+        })
+        })
     })
-}
-})
 .catch(error=> {
     console.log(error)
     // debugger
-})
-
-// axios.get('https://lambda-times-api.herokuapp.com/articles')
-// .then(theData =>{
-//     let meBe = theData.data
-//     console.log(meBe)
-//     // meBe.forEach(item =>{
-//     //     console.log(item)
-//     // })
-//     let test = theData.data.articles
-//     test[topic].forEach(article =>{
-//         const newArticle = iMakeCards(article)
-//     appendPoint.appendChild(newArticle)
-//     })
-//     console.log(test)
-// })
-// .catch(error=> {
-//     console.log(error)
-//     // debugger
-// })
-
-// axios.get('https://lambda-times-api.herokuapp.com/articles')
-// .then(jqueryData =>{
-//         let test = jqueryData.data.articles.jquery
-//         test.forEach(article =>{
-//             const newArticle = iMakeCards(article)
-//         appendPoint.appendChild(newArticle)
-//         })
-//         console.log(test)
-//     })
-// .catch(error=> {
-//     console.log(error)
-//     debugger
-// })
-
-// axios.get('https://lambda-times-api.herokuapp.com/articles')
-// .then(nodeData =>{
-//         let test = nodeData.data.articles.node
-//         test.forEach(article =>{
-//             const newArticle = iMakeCards(article)
-//         appendPoint.appendChild(newArticle)
-//         })
-//         console.log(test)
-//     })
-// .catch(error=> {
-//     console.log(error)
-//     debugger
-// })
-// axios.get('https://lambda-times-api.herokuapp.com/articles')
-// .then(technologyData =>{
-//         let test = technologyData.data.articles.technology
-//         test.forEach(article =>{
-//             const newArticle = iMakeCards(article)
-//         appendPoint.appendChild(newArticle)
-//         })
-//         console.log(test)
-//     })
-// .catch(error=> {
-//     console.log(error)
-//     debugger
-// })
+});
