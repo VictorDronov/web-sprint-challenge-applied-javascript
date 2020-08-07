@@ -50,6 +50,9 @@ function iMakeCards (articleData){
     img.src = articleData.authorPhoto
     authorsName.textContent = `By ${articleData.authorName}`
 
+    card.addEventListener('click', ()=>{
+        console.log(articleData.headline)
+    })
     return card
 }
 
